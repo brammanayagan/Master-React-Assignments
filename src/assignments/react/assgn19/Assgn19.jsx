@@ -6,7 +6,6 @@ import ChangeName from "./components/ChangeName";
 import UpdateAge from "./components/UpdateAge";
 import UpdateCity from "./components/UpdateCity";
 import AddSkill from "./components/AddSkill";
-import RemoveSkill from "./components/RemoveSkill";
 import EvenOdd from "./components/EvenOdd";
 
 export default function Assgn19() {
@@ -20,7 +19,6 @@ export default function Assgn19() {
       <UpdateAge />
       <UpdateCity />
       <AddSkill />
-      <RemoveSkill />
       <EvenOdd />
     </div>
   );

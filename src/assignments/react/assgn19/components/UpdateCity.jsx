@@ -2,10 +2,14 @@ import { useState } from "react";
 
 const UpdateCity = () => {
   const [user, setUser] = useState({
-    name: "Arun",
+    name: "Tom",
     role: "Developer",
     city: "Chennai",
   });
+
+  const handleCity = () => {
+    setUser({ ...user, city: "Bangalore" });
+  };
 
   return (
     <>
@@ -13,7 +17,7 @@ const UpdateCity = () => {
         <p>{user.city}</p>
 
         <button
-          onClick={() => setUser({ ...user, city: "Bangalore" })}
+          onClick={handleCity}
           className="bg-orange-500 px-3 py-1 text-white"
         >
           Change City

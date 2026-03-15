@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const ChangeName = () => {
-  const [name, setName] = useState("Arun");
+  const [name, setName] = useState("CSS");
+
+  const handleName = () => {
+    setName("TailwindCSS");
+  };
 
   return (
     <>
@@ -9,7 +13,7 @@ const ChangeName = () => {
         <p>{name}</p>
 
         <button
-          onClick={() => setName("Kumar")}
+          onClick={handleName}
           className="bg-green-500 px-3 py-1 text-white"
         >
           Change Name
