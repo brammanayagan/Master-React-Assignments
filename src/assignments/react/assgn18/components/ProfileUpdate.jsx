@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const ProfileUpdate = () => {
   const [profile, setProfile] = useState({
-    name: "Divya",
+    name: "Priya",
     role: "Developer",
     experience: 2,
   });

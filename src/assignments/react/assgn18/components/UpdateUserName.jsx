@@ -2,14 +2,14 @@ import { useState } from "react";
 
 const UpdateUserName = () => {
   const [user, setUser] = useState({
-    name: "CSS",
+    name: "John",
     age: 25,
   });
 
   const handleUpdateName = () => {
     setUser({
       ...user,
-      name: "TailwindCSS",
+      name: "Sudhan",
     });
   };
 

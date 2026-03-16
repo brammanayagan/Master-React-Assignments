@@ -2,8 +2,8 @@ import { useState } from "react";
 
 const UpdateAge = () => {
   const [person, setPerson] = useState({
-    name: "Bramma",
-    age: 23,
+    name: "Ravi",
+    age: 22,
     city: "Chennai",
   });
 
