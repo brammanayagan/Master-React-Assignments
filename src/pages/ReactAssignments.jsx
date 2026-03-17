@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 const ReactAssignments = () => {
   const navigate = useNavigate();
 
-  const assignments = Array.from({ length: 20 }, (_, i) => i + 1);
+  const assignments = [];
+
+  for (let i = 10; i <= 40; i++) {
+    assignments.push(i);
+  }
 
   return (
     <div className="p-10 grid grid-cols-2 gap-4">
