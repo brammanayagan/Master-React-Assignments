@@ -6,6 +6,7 @@ import Assgn19 from "../assignments/react/assgn19/Assgn19";
 import Assgn18 from "../assignments/react/assgn18/Assgn18";
 import Assgn14 from "../assignments/react/assgn14/Assgn14";
 import Assgn20 from "../assignments/react/assgn20/assgn20";
+import Assgn21 from "../assignments/react/assgn21/Assgn21";
 
 const AppRoute = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoute = () => {
       <Route path="/react/18" element={<Assgn18 />} />
       <Route path="/react/14" element={<Assgn14 />} />
       <Route path="/react/20" element={<Assgn20 />} />
+      <Route path="/react/21" element={<Assgn21 />} />
     </Routes>
   );
 };
