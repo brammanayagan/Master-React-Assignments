@@ -5,7 +5,7 @@ const ReactAssignments = () => {
 
   const assignments = [];
 
-  for (let i = 10; i <= 40; i++) {
+  for (let i = 14; i <= 40; i++) {
     assignments.push(i);
   }
 
