@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { AppContext } from "../AppContext";
+import { AppContext } from "../context/AppContext";
 
-const CartSection = () => {
+const CartPage = () => {
   const { cart, setCart } = useContext(AppContext);
 
-  const handleAddProduct = () => {
+  const handleAdd = () => {
     setCart(cart + 1);
   };
 
@@ -14,7 +14,7 @@ const CartSection = () => {
         <h2>Cart Items: {cart}</h2>
 
         <button
-          onClick={handleAddProduct}
+          onClick={handleAdd}
           className="bg-purple-500 text-white px-4 py-2 mt-2"
         >
           Add Product
@@ -24,4 +24,4 @@ const CartSection = () => {
   );
 };
 
-export default CartSection;
+export default CartPage;

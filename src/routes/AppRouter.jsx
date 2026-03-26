@@ -24,7 +24,7 @@ const AppRoute = () => {
       <Route path="/react/20" element={<Assgn20 />} />
       <Route path="/react/21" element={<Assgn21 />} />
       <Route path="/react/23" element={<Assgn23 />} />
-      <Route path="/react/25" element={<Assgn25 />} />
+      <Route path="/react/25/*" element={<Assgn25 />} />
       <Route path="/react/26" element={<Assgn26 />} />
     </Routes>
   );
