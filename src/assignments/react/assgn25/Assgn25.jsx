@@ -11,16 +11,12 @@ import CartPage from "./pages/CartPage";
 const InnerApp = () => {
   const { theme } = useContext(AppContext);
 
-  const themeClasses = {
-    light: "bg-white text-black",
-    dark: "bg-black text-white",
-  };
-
   return (
     <>
-      <div className={`min-h-screen ${themeClasses[theme]}`}>
+      <div
+        className={`min-h-screen ${theme === "light" ? "bg-white text-black" : "bg-black text-white"}`}
+      >
         <Navbar />
-
         <Routes>
           <Route index element={<Home />} />
           <Route path="cart" element={<CartPage />} />

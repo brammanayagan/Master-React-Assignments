@@ -5,7 +5,11 @@ const CartPage = () => {
   const { cart, setCart } = useContext(AppContext);
 
   const handleAdd = () => {
-    setCart(cart + 1);
+    setCart((prev) => prev + 1);
+  };
+
+  const handleSelect = (e) => {
+    setCart(Number(e.target.value));
   };
 
   return (
@@ -19,6 +23,18 @@ const CartPage = () => {
         >
           Add Product
         </button>
+        <select onChange={handleSelect}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
       </div>
     </>
   );
