@@ -17,7 +17,7 @@ const LanguageSwitch = () => {
           onClick={handleToggleLang}
           className="bg-green-500 text-white px-4 py-2 mt-2"
         >
-          Switch Language
+          {lang === "en" ? "Switch to Tamil" : "Switch to English"}
         </button>
       </div>
     </>

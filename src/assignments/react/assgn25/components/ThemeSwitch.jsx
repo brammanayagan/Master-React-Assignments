@@ -17,7 +17,7 @@ const ThemeSwitch = () => {
           onClick={handleToggleTheme}
           className="bg-blue-500 text-white px-4 py-2 mt-2"
         >
-          Toggle Theme
+          {theme === "light" ? "Switch to Dark" : "Switch to Light"}{" "}
         </button>
       </div>
     </>
