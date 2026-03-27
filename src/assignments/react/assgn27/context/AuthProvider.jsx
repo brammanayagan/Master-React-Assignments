@@ -4,12 +4,16 @@ import { AuthContext } from "./AuthContext";
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
+  // ----------------------------------------use effect--------------------------------------------------
+
   useEffect(() => {
     const storedUser = localStorage.getItem("loggedUser");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
   }, []);
+
+  // ----------------------------------------Register--------------------------------------------------
 
   const handleRegister = (data) => {
     const oldUsers = JSON.parse(localStorage.getItem("users")) || [];
@@ -27,6 +31,8 @@ const AuthProvider = ({ children }) => {
     alert("Registered successfully");
     return true;
   };
+
+  // ----------------------------------------Login--------------------------------------------------
 
   const handleLogin = (data) => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -46,10 +52,14 @@ const AuthProvider = ({ children }) => {
     return true;
   };
 
+  // ----------------------------------------Logout--------------------------------------------------
+
   const handleLogout = () => {
     localStorage.removeItem("loggedUser");
     setUser(null);
   };
+
+  // ----------------------------------------AuthContext--------------------------------------------------
 
   return (
     <>

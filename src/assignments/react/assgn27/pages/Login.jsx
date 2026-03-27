@@ -3,26 +3,26 @@ import { AuthContext } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
+  //context
   const { handleLogin, user } = useContext(AuthContext);
+
+  //navigate
   const navigate = useNavigate();
 
+  //single state handle all inputs
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
 
+  //handle inputs and to store in a object using [objkey]: value
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // 🔒 If already logged in → go dashboard
-  useEffect(() => {
-    if (user) {
-      navigate("/react/27/dashboard");
-    }
-  }, [user]);
-
+  //what and all happens after dorm submitted
   const handleSubmit = () => {
+    //validations
     if (!form.email || !form.password) {
       alert("All fields required");
       return;
@@ -38,12 +38,16 @@ const Login = () => {
       return;
     }
 
+    //sending this state to handle login - where login logics handled
     const success = handleLogin(form);
+  };
 
-    if (success) {
+  // 🔒 If already logged in → go dashboard
+  useEffect(() => {
+    if (user) {
       navigate("/react/27/dashboard");
     }
-  };
+  }, [user]);
 
   return (
     <>
@@ -51,21 +55,24 @@ const Login = () => {
         <h2 className="text-xl mb-2">Login</h2>
 
         {/* 🧠 UX guidance */}
-        <p className="text-sm mb-4 text-gray-600">
-          Use registered email • Password min 6 characters
-        </p>
+        <p className="text-sm mb-4 text-gray-600">Use registered email</p>
 
         <input
           name="email"
-          placeholder="Email"
+          value={form.email}
           onChange={handleChange}
+          type="email"
+          placeholder="Email"
           className="border p-2 block mb-2"
         />
+
+        <p className="text-sm mb-4 text-gray-600">Password min 6 characters</p>
         <input
           name="password"
+          value={form.password}
+          onChange={handleChange}
           type="password"
           placeholder="Password"
-          onChange={handleChange}
           className="border p-2 block mb-2"
         />
 

@@ -3,9 +3,13 @@ import { AuthContext } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
+  //context
   const { handleRegister, user } = useContext(AuthContext);
+
+  //navigate
   const navigate = useNavigate();
 
+  //state
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -13,16 +17,10 @@ const Register = () => {
     confirm: "",
   });
 
+  //handle inputs in single state
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
-  // 🔒 If already logged in → go dashboard
-  useEffect(() => {
-    if (user) {
-      navigate("/react/27/dashboard");
-    }
-  }, [user]);
 
   const handleSubmit = () => {
     // Basic validation rules
@@ -51,12 +49,19 @@ const Register = () => {
       return;
     }
 
+    //context logic
     const success = handleRegister(form);
-
     if (success) {
-      navigate("/react/27/login");
+      navigate("/react/27/dashboard");
     }
   };
+
+  // // 🔒 If already logged in → go dashboard
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate("/react/27/dashboard");
+  //   }
+  // }, [user]);
 
   return (
     <>
@@ -64,34 +69,40 @@ const Register = () => {
         <h2 className="text-xl mb-2">Register</h2>
 
         {/* 🧠 UX guidance */}
-        <p className="text-sm mb-4 text-gray-600">
-          Name (min 3 chars) • Email must include @ • Password min 6 chars
-        </p>
 
         <input
           name="name"
-          placeholder="Name"
+          value={form.name}
           onChange={handleChange}
+          type="text"
+          placeholder="Name"
           className="border p-2 block mb-2"
         />
+
         <input
           name="email"
-          placeholder="Email"
+          value={form.email}
           onChange={handleChange}
+          type="email"
+          placeholder="Email"
           className="border p-2 block mb-2"
         />
+
+        <p className="text-sm mb-4 text-gray-600">Password min 6 chars</p>
         <input
           name="password"
+          value={form.password}
+          onChange={handleChange}
           type="password"
           placeholder="Password"
-          onChange={handleChange}
           className="border p-2 block mb-2"
         />
         <input
           name="confirm"
+          value={form.confirm}
+          onChange={handleChange}
           type="password"
           placeholder="Confirm Password"
-          onChange={handleChange}
           className="border p-2 block mb-2"
         />
 
@@ -105,7 +116,7 @@ const Register = () => {
         {/* 🔁 Navigate to login */}
         <p className="mt-3 text-sm">
           Already have an account?{" "}
-          <Link to="/react/27/login" className="text-blue-500">
+          <Link to="/react/27/" className="text-blue-500">
             Login
           </Link>
         </p>
