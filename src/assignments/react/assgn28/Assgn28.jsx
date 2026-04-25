@@ -86,18 +86,6 @@ const value = useContext(AuthContext);`}
         </pre>
       </div>
 
-      {/* HOC */}
-      <div className="bg-gray-100 p-4 rounded-lg">
-        <h2 className="text-lg font-semibold">HOC</h2>
-        <p>→ Function that wraps a component.</p>
-
-        <pre className="bg-black text-cyan-400 p-2 rounded mt-2 overflow-x-auto">
-          {`const withAlert = (Comp) => {
-  return (props) => <Comp {...props} />;
-};`}
-        </pre>
-      </div>
-
       {/* Comparison */}
       <div className="bg-gray-100 p-4 rounded-lg">
         <h2 className="text-lg font-semibold">HOC vs Custom Hook</h2>
