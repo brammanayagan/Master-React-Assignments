@@ -15,6 +15,7 @@ import Assgn15 from "../assignments/react/assgn15/Assgn15";
 import Assgn32 from "../assignments/react/assgn32/Assgn32";
 import Assgn29 from "../assignments/react/assgn29/Assgn29";
 import Assgn30 from "../assignments/react/assgn30/Assgn30";
+import Assgn28 from "../assignments/react/assgn28/Assgn28";
 
 const AppRoute = () => {
   return (
@@ -36,6 +37,7 @@ const AppRoute = () => {
       <Route path="/react/32" element={<Assgn32 />} />
       <Route path="/react/29" element={<Assgn29 />} />
       <Route path="/react/30" element={<Assgn30 />} />
+      <Route path="/react/28" element={<Assgn28 />} />
     </Routes>
   );
 };
